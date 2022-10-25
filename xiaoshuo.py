@@ -9,6 +9,8 @@ TARGETS = ['60_60910',]
 def parse_one(url):
     context=ssl.create_default_context()
     context.set_ciphers("DEFAULT")
+    context.check_hostname = False
+    context.verify_mode = ssl.CERT_NONE
     with urllib.request.urlopen('https://www.74wx.com' + url ,context=context) as f:
         source = str(f.read(), 'gbk')
         soup = BeautifulSoup(source, 'html.parser')
@@ -22,6 +24,8 @@ def parse_one(url):
 def parse_index(target: str):
     context=ssl.create_default_context()
     context.set_ciphers("DEFAULT")
+    context.check_hostname = False
+    context.verify_mode = ssl.CERT_NONE
     with urllib.request.urlopen('https://www.74wx.com/' + target + '/', context=context) as f:
         path = Path(sys.path[0] + '/' + target)
         files = [x.name for x in path.iterdir() if x.is_file()]
