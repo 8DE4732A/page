@@ -1,4 +1,5 @@
 import sys
+import ssl
 import urllib.request
 from bs4 import BeautifulSoup
 from pathlib import Path
@@ -6,7 +7,9 @@ from pathlib import Path
 TARGETS = ['60_60910',]
 
 def parse_one(url):
-    with urllib.request.urlopen('https://www.74wx.com' + url ) as f:
+    context=ssl.create_default_context()
+    context.set_ciphers("DEFAULT")
+    with urllib.request.urlopen('https://www.74wx.com' + url ,context=context) as f:
         source = str(f.read(), 'gbk')
         soup = BeautifulSoup(source, 'html.parser')
         content = str(soup.select_one('#content'))
@@ -17,7 +20,9 @@ def parse_one(url):
 
 
 def parse_index(target: str):
-    with urllib.request.urlopen('https://www.74wx.com/' + target + '/') as f:
+    context=ssl.create_default_context()
+    context.set_ciphers("DEFAULT")
+    with urllib.request.urlopen('https://www.74wx.com/' + target + '/', context=context) as f:
         path = Path(sys.path[0] + '/' + target)
         files = [x.name for x in path.iterdir() if x.is_file()]
         source = str(f.read(), 'gbk')
