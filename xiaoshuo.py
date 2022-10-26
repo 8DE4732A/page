@@ -10,8 +10,6 @@ def parse_one(url):
     context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
     context.set_ciphers('ALL')
     print(url)
-    if '55067475.html' in url:
-        url = '/60_60910/55067475.html?__HY=37102b604f36fac18bbfddda8cb183ada1666778764_1154397'
     with urllib.request.urlopen('https://www.74wx.com' + url ,context=context) as f:
         source = str(f.read(), 'gbk')
         soup = BeautifulSoup(source, 'html.parser')
