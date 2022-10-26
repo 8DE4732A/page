@@ -9,10 +9,10 @@ def parse_one(url):
     with requests.get('https://www.74wx.com' + url) as f:
         source = str(f.read(), 'gbk')
         soup = BeautifulSoup(source, 'html.parser')
-        content = str(soup.select_one('#content'))
-        if content:
+        content = soup.select_one('#content')
+        if content is not None:
             with open(sys.path[0] + url, 'w+', encoding='utf-8') as w:
-                w.write(f'<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><title>唐人的餐桌</title></head><body>{content}</body></html>')
+                w.write(f'<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><title>唐人的餐桌</title></head><body>{str(content)}</body></html>')
     
 
 
@@ -24,11 +24,10 @@ def parse_index(target: str):
         soup = BeautifulSoup(source, 'html.parser')
         for a in soup.select('dl > dd > a')[:10]:
             href = a['href']
-            if href[href.rfind('/') + 1:] not in files:
-                try:
-                    parse_one(href)
-                except:
-                    pass
+            try:
+                parse_one(href)
+            except:
+                pass
         dl = str(soup.select_one('dl'))
         with open(sys.path[0] + '/' + target + '/index.html', 'w+', encoding='utf-8') as w:
             w.write(f'<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><title>唐人的餐桌</title></head><body>{dl}</body></html>')
