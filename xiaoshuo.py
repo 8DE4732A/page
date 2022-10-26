@@ -7,9 +7,8 @@ from pathlib import Path
 TARGETS = ['60_60910',]
 
 def parse_one(url):
-    cipherstr = 'MEDIUM:!aNULL:!eNULL'
-    context = ssl._create_unverified_context()
-    context.set_ciphers(cipherstr)
+    context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+    context.set_ciphers('ALL')
     with urllib.request.urlopen('https://www.74wx.com' + url ,context=context) as f:
         source = str(f.read(), 'gbk')
         soup = BeautifulSoup(source, 'html.parser')
@@ -21,13 +20,13 @@ def parse_one(url):
 
 
 def parse_index(target: str):
-    cipherstr = 'MEDIUM:!aNULL:!eNULL'
-    context = ssl._create_unverified_context()
-    context.set_ciphers(cipherstr)
+    context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+    context.set_ciphers('ALL')
     with urllib.request.urlopen('https://www.74wx.com/' + target + '/', context=context) as f:
         path = Path(sys.path[0] + '/' + target)
         files = [x.name for x in path.iterdir() if x.is_file()]
         source = str(f.read(), 'gbk')
+        print(source)
         soup = BeautifulSoup(source, 'html.parser')
         for a in soup.select('dl > dd > a')[:10]:
             href = a['href']
