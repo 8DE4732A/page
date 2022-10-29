@@ -20,15 +20,14 @@ def parse_one(url):
 def parse_index(target: str):
     r = requests.get('https://www.74wx.vip/' + target + '/')
     r.encoding = 'gbk'
-    print(r.text)
     path = Path(sys.path[0] + '/' + target)
     files = [x.name for x in path.iterdir() if x.is_file()]
     soup = BeautifulSoup(r.text, 'html.parser')
-    for a in soup.select('dl > dd > a')[:10]:
+    for a in soup.select('dl > dd > a')[:5]:
         href = a['href']
         try:
             parse_one(href)
-            time.sleep(3)
+            time.sleep(10)
         except:
             pass
     dl = str(soup.select_one('dl'))
