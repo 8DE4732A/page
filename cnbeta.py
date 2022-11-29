@@ -82,7 +82,7 @@ def parse_index():
     r.encoding = 'utf-8'
     soup = BeautifulSoup(r.text, 'html.parser')
     items = []
-    for item in soup.select('.item')[0:20]:
+    for item in soup.select('.item'):
         a = item.select_one('dl > dt > a')
         if a is not None and a.has_attr('href'):
             a['href'] = parse_artical(a['href'])
