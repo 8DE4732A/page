@@ -5,7 +5,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 
 
-SERVER_NAME = 'https://xs.liuping.win'
+SERVER_NAME = 'https://x.liuping.win'
 
 # proxies =  {
 #    'http': 'http://127.0.0.1:10809',
