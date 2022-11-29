@@ -4,6 +4,7 @@ import hashlib
 from pathlib import Path
 from bs4 import BeautifulSoup
 
+
 SERVER_NAME = 'https://xs.liuping.win'
 
 # proxies =  {
