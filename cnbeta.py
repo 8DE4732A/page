@@ -69,6 +69,8 @@ def parse_artical(url):
         print('title:', title)
         summary = soup.select_one('.article-summary > p')
         content = soup.select_one('.article-content')
+        for one in content.select('.article-topic'):
+            one.decompose()
         for a in content.select('a'):
             for one in a.children:
                 a.insert_before(one)
