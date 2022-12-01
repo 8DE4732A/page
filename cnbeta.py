@@ -1,7 +1,7 @@
 import requests
 import sys
 import hashlib
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from bs4 import BeautifulSoup
 
@@ -71,8 +71,6 @@ def parse_artical(url):
         content = soup.select_one('.article-content')
         for img in content.select('img'):
             img['src'] = parse_img(img['src'])
-        result = url.replace('https://www.cnbeta.com.tw', SERVER_NAME).replace('//hot.cnbeta.com.tw', SERVER_NAME + '/hot')
-        
         with open(sys.path[0] + '/artical/' + p, 'w+', encoding='utf-8') as f:
             f.write('<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><title>' + title + '</title><style>img {max-width: 90%;} body {text-align: center;}</style></head><body>' + '<h1>' + title + '</h1>' + str(summary) + '<hr>' + str(content) + '</body></html>')
     return SERVER_NAME + '/artical/' + p
@@ -90,7 +88,7 @@ def parse_index():
             del a['target']
             items.append(str(a))
     articals = '<br/>'.join(items)
-    s = '<p>' + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + '</p>'
+    s = '<p>' + (datetime.utcnow() + timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S') + '</p>'
     with open(sys.path[0] + '/index.html', 'w+', encoding='utf-8') as f:
         f.write(f'<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><title>cnbeta</title></head><body>{s}{articals}</body></html>')
         
