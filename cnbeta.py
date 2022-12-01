@@ -69,6 +69,10 @@ def parse_artical(url):
         print('title:', title)
         summary = soup.select_one('.article-summary > p')
         content = soup.select_one('.article-content')
+        for a in content.select('a'):
+            for one in a.children:
+                a.insert_before(one)
+            a.decompose()
         for img in content.select('img'):
             img['src'] = parse_img(img['src'])
             if img.parent.name == 'a' and img.parent.has_attr('href'):
