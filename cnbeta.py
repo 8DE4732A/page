@@ -71,6 +71,8 @@ def parse_artical(url):
         content = soup.select_one('.article-content')
         for img in content.select('img'):
             img['src'] = parse_img(img['src'])
+            if img.parent.name == 'a' and img.parent.has_attr('href'):
+                img.parent['href'] = img['src']
         with open(sys.path[0] + '/artical/' + p, 'w+', encoding='utf-8') as f:
             f.write('<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><title>' + title + '</title><style>img {max-width: 90%;} body {text-align: center;}</style></head><body>' + '<h1>' + title + '</h1>' + str(summary) + '<hr>' + str(content) + '</body></html>')
     return SERVER_NAME + '/artical/' + p
