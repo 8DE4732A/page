@@ -8,11 +8,11 @@ from bs4 import BeautifulSoup
 
 SERVER_NAME = 'https://x.liuping.win'
 
-# proxies =  {
-#    'http': 'http://127.0.0.1:10809',
-#    'https': 'http://127.0.0.1:10809',
-# }
-proxies = None
+proxies =  {
+   'http': 'http://127.0.0.1:7890',
+   'https': 'http://127.0.0.1:7890',
+}
+# proxies = None
 
 hot_headers = {
     'authority': 'hot.cnbeta.com.tw',
@@ -48,8 +48,9 @@ def parse_img(url):
     print('-----img')
     r = requests.get(url)
     p = hashlib.md5(url.encode(encoding='UTF-8')).hexdigest() + url[url.rindex('.'):]
-    with open(sys.path[0] + '/img/' + p, 'wb') as f:
-        f.write(r.content)
+    if not Path(sys.path[0] + '/img/' + p).exists():
+        with open(sys.path[0] + '/img/' + p, 'wb') as f:
+            f.write(r.content)
     return SERVER_NAME + '/img/' +  p
 
 def parse_artical(url):
@@ -79,8 +80,26 @@ def parse_artical(url):
             img['src'] = parse_img(img['src'])
             if img.parent.name == 'a' and img.parent.has_attr('href'):
                 img.parent['href'] = img['src']
+        page = f'''<!DOCTYPE html>
+            <html><head>
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta charset="utf-8">
+            <meta property="og:type" content="article">
+            <meta property="og:locale" content="zh_CN">
+            <meta property="og:description" content="{soup.select_one("meta[property='og:description']")['content']}">
+            <meta property="og:site_name" content="x.liuping.win">
+            <meta property="og:image" content="{parse_img(soup.select_one("meta[property='og:image']")['content'])}">
+            <meta property="og:url" content="{SERVER_NAME + '/artical/' + p}">
+            <meta property="og:title" content="{title} - x.liuping.win">
+            <meta name="keywords" content="{soup.select_one("meta[name='keywords']")['content'].replace('cnBeta','x.liuping.win')}">
+            <meta name="description" content="{soup.select_one("meta[name='description']")['content']}">
+            <title>{title}</title>
+            <style>img {{max-width: 90%;}} body {{text-align: center;}}</style>
+            </head>
+            <body><h1>{title}</h1>{str(summary)}<hr>{str(content)}</body>
+            </html>'''
         with open(sys.path[0] + '/artical/' + p, 'w+', encoding='utf-8') as f:
-            f.write('<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><title>' + title + '</title><style>img {max-width: 90%;} body {text-align: center;}</style></head><body>' + '<h1>' + title + '</h1>' + str(summary) + '<hr>' + str(content) + '</body></html>')
+            f.write(page)
     return SERVER_NAME + '/artical/' + p
 
 
@@ -98,7 +117,15 @@ def parse_index():
     articals = '<br/>'.join(items)
     s = '<p>' + (datetime.utcnow() + timedelta(hours=8)).strftime('%Y-%m-%d %H:%M:%S') + '</p>'
     with open(sys.path[0] + '/index.html', 'w+', encoding='utf-8') as f:
-        f.write(f'<!DOCTYPE html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><meta charset="utf-8"><title>cnbeta</title></head><body>{s}{articals}</body></html>')
+        f.write(f'''<!DOCTYPE html>
+        <html>
+        <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <title>cnbeta</title>
+        </head>
+        <body>{s}{articals}</body>
+        </html>''')
         
 
 if __name__ == '__main__':
