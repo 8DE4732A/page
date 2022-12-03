@@ -12,7 +12,7 @@ proxies =  {
    'http': 'http://127.0.0.1:7890',
    'https': 'http://127.0.0.1:7890',
 }
-# proxies = None
+proxies = None
 
 hot_headers = {
     'authority': 'hot.cnbeta.com.tw',
