@@ -46,6 +46,8 @@ headers = {
 
 def parse_img(url):
     print('-----img')
+    if url.startswith("//"):
+        url = "https:" + url
     r = requests.get(url)
     p = hashlib.md5(url.encode(encoding='UTF-8')).hexdigest() + url[url.rindex('.'):]
     if not Path(sys.path[0] + '/img/' + p).exists():
