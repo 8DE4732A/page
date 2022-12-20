@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+            <html><head>
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta charset="utf-8">
+            <meta property="og:type" content="article">
+            <meta property="og:locale" content="zh_CN">
+            <meta property="og:description" content="苹果公司已经修复了一个漏洞，攻击者可以通过能够绕过Gatekeeper应用程序执行限制的不受信任的应用程序在脆弱的macOS设备上部署恶意软件。该安全漏洞&quot;Achilles&quot;由微软首席安全研究员JonathanBarOr发现并报告，现在被追踪为CVE-2022-42821。一周前，即12月13日，苹果在macOS13（Ventura）、macOS12.6.2（Monterey）">
+            <meta property="og:site_name" content="x.liuping.win">
+            <meta property="og:image" content="https://x.liuping.win/img/c718529027dffedf2908c86e8e0d3ec8.png">
+            <meta property="og:url" content="https://x.liuping.win/artical/783b05637c11bbc817b85838d98088f7.htm">
+            <meta property="og:title" content="微软安全研究人员发现macOS漏洞 可让恶意软件绕过安全检查 - x.liuping.win">
+            <meta name="keywords" content="Apple macOS,微软安全研究人员发现macOS漏洞 可让恶意软件绕过安全检查,x.liuping.win">
+            <meta name="description" content="苹果公司已经修复了一个漏洞，攻击者可以通过能够绕过Gatekeeper应用程序执行限制的不受信任的应用程序在脆弱的macOS设备上部署恶意软件。该安全漏洞&amp;quot;Achilles&amp;quot;由微软首席安全研究员JonathanBarOr发现并报告，现在被追踪为CVE-2022-42821。一周前，即12月13日，苹果在macOS13（Ventura）、macOS12.6.2（Monterey）">
+            <title>微软安全研究人员发现macOS漏洞 可让恶意软件绕过安全检查</title>
+            <style>img {max-width: 90%;} body {text-align: center;}</style>
+            </head>
+            <body><h1>微软安全研究人员发现macOS漏洞 可让恶意软件绕过安全检查</h1><p>苹果公司已经修复了一个漏洞，攻击者可以通过能够绕过Gatekeeper应用程序执行限制的不受信任的应用程序在脆弱的macOS设备上部署恶意软件。该安全漏洞"Achilles"由微软首席安全研究员Jonathan
+ Bar Or发现并报告，现在被追踪为CVE-2022-42821。一周前，即12月13日，苹果在macOS 13（Ventura）、macOS 12.6.2（Monterey）和macOS 1.7.2（Big Sur）中解决了这个漏洞。</p><hr><div class="article-content" id="artibody">
+<p><img alt="图片.png" src="https://x.liuping.win/img/c718529027dffedf2908c86e8e0d3ec8.png" title=""/><br/></p><p>Gatekeeper是一个macOS安全功能，它自动检查所有从互联网上下载的应用程序是否经过公证和开发者签名（经苹果公司批准），在启动前要求用户确认，或发出应用程序不可信的警告。</p><p>这是通过检查一个名为com.apple.quarantine的扩展属性来实现的，该属性由网络浏览器分配给所有下载文件，类似于Windows中的Mark of the Web。</p><p>该缺陷允许特别制作的载荷滥用逻辑问题，设置限制性的访问控制列表（ACL）权限，阻止网络浏览器和互联网下载器为下载的ZIP文件存档的有效载荷设置com.apple.quarantine属性。结果是存档的恶意载荷中包含的恶意应用程序在目标系统上启动，而不是被Gatekeeper阻挡，使攻击者能够下载和部署恶意软件。</p><p>微软周一表示，"苹果在macOS Ventura中引入的锁定模式，是针对可能被复杂网络攻击盯上的高风险用户的可选保护功能，旨在阻止零点击远程代码执行漏洞，因此不能防御Achilles"。微软安全威胁情报团队补充说："无论他们的锁定模式状态如何，终端用户都应该应用苹果发布的已修复版本"。</p><p>这只是过去几年发现的多个Gatekeeper旁路之一，其中许多被攻击者在外部滥用，以规避macOS安全机制，如Gatekeeper、文件隔离和系统完整性保护（SIP）在完全打过补丁的Mac上。</p><p>例如，Bar Or在2021年报告了一个被称为Shrootless的安全漏洞，可以让威胁者绕过系统完整性保护（SIP），在被攻击的Mac上进行任意操作，将权限提升到root，甚至在脆弱的设备上安装rootkit。该研究人员还发现了powerdir，这是一个允许攻击者绕过透明、同意和控制（TCC）技术来访问用户受保护数据的漏洞。他还发布了一个macOS漏洞（CVE-2022-26706）的利用代码，可以帮助攻击者绕过沙盒限制，在系统上运行代码。</p><p>最后但并非最不重要的是，苹果在2021年4月修复了一个零日macOS漏洞，使臭名昭著的Shlayer恶意软件背后的威胁者能够规避苹果的文件隔离、Gatekeeper和证书安全检查，并在受感染的Mac上下载更多的恶意软件。</p><p>Shlayer的创造者还设法让他们的有效载荷通过苹果的自动证书程序，并使用多年的技术来提升权限和禁用macOS的Gatekeeper，以运行未签署的载荷。</p><p>了解更多：</p><p>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42821<br/></p> </div></body>
+            </html>
