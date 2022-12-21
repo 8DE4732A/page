@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+            <html><head>
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta charset="utf-8">
+            <meta property="og:type" content="article">
+            <meta property="og:locale" content="zh_CN">
+            <meta property="og:description" content="如果你是一个长期的Windows用户，你知道操作系统中的几个进程或功能都与文件资源管理器有关。虽然explorer.exe应该只与文件管理相关，但它也与Windows体验的其他部分相关，如任务栏，这并不完全合理。">
+            <meta property="og:site_name" content="x.liuping.win">
+            <meta property="og:image" content="https://x.liuping.win/img/5ad14d3ea30f056a0971da066529effc.jpg">
+            <meta property="og:url" content="https://x.liuping.win/artical/69b03539f967b96a34c05773e2d1be49.htm">
+            <meta property="og:title" content="微软希望通过将操作系统功能与explorer.exe脱钩来使Windows运行更快 - x.liuping.win">
+            <meta name="keywords" content="Windows 11,微软希望通过将操作系统功能与explorer.exe脱钩来使Windows运行更快,x.liuping.win">
+            <meta name="description" content="如果你是一个长期的Windows用户，你知道操作系统中的几个进程或功能都与文件资源管理器有关。虽然explorer.exe应该只与文件管理相关，但它也与Windows体验的其他部分相关，如任务栏，这并不完全合理。">
+            <title>微软希望通过将操作系统功能与explorer.exe脱钩来使Windows运行更快</title>
+            <style>img {max-width: 90%;} body {text-align: center;}</style>
+            </head>
+            <body><h1>微软希望通过将操作系统功能与explorer.exe脱钩来使Windows运行更快</h1><p>如果你是一个长期的Windows用户，你知道操作系统中的几个进程或功能都与文件资源管理器有关。虽然explorer.exe应该只与文件管理相关，但它也与Windows体验的其他部分相关，如任务栏，这并不完全合理。</p><hr><div class="article-content" id="artibody">
+<p><img alt="Windows-11-Explorer-process.jpg" src="https://x.liuping.win/img/5ad14d3ea30f056a0971da066529effc.jpg" title=""/></p><p>微软一直在设法将任务栏、通知中心等功能与文件资源管理器（explorer.exe）脱钩。桌面和explorer.exe之间的连接是操作系统的瓶颈之一，因为繁重和资源密集型的文件操作会使任务栏等不相关的功能失去响应。</p><p>更糟糕的是，如果你的explorer.exe进程崩溃了，它也会使桌面和其他一些功能崩溃。当然，如果你重新启动进程本身，这可以被修复，但如果功能与explorer.exe脱钩，Windows 11桌面崩溃的情况很可能会大大减少。</p><p style="text-align: center;"><img alt="Windows-11-File-Explorer-process.jpg" src="https://x.liuping.win/img/52659f4fbeed7b1c5bf27a8342f42835.jpg" title=""/></p><p style="text-align: center;">Windows 11文件资源管理器进程</p><p>微软现在已经开始将"Impressive Shell"与文件浏览器分离。对于那些不熟悉Windows开发的人来说，Impressive Shell是在Windows 8中加入的，它最初负责Charms Bar等功能。Impressive Shell与一个名为"ShellAppRuntime.exe"的进程有关，该进程与explorer.exe相连。</p><p>在最新的预览版构建中，微软一直在尝试将Immersive Shell移出文件资源管理器。</p><p>这首先被"Start Is All Back"的开发者发现，他们观察到。"dev 25252中有趣的功能：ImmersiveShellInShellAppRuntime（id:39319758）将Impressive Shell从资源管理器中移出。并且还没有启动ShellAppRuntime.exe，这可能会让运行更可靠一点"。</p><p>在较新的构建中，系统现在可以独立启动ShellAppRuntime.exe。ShellAppRuntime.exe以前与explorer.exe链接，现在可以在没有Explorer.exe的情况下独立启动和工作。事实上，在ShellAppRuntime也被启动之前，搜索用户界面不会打开。</p><p>当然，这种改变还有很长的路要走，操作系统的其他领域仍然深深地集成在文件管理过程中。</p><p>在不久的将来，Windows 11的功能将存在在不同的软件进程中，使Windows更容易运行这些功能，而不必依赖文件资源管理器。这么做还可以减少崩溃，使操作系统运行更快。例如，文件资源管理器的崩溃不会使整个桌面瘫痪。</p> </div></body>
+            </html>
