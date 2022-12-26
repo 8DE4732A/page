@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+            <html><head>
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta charset="utf-8">
+            <meta property="og:type" content="article">
+            <meta property="og:locale" content="zh_CN">
+            <meta property="og:description" content="斯坦福大学的计算机科学家发现，接受GithubCopilot等人工智能工具帮助的程序员比那些单打独斗的程序员产生的代码安全性要低。在一篇题为&quot;用户使用人工智能助手写出的代码更不安全吗？&quot;的论文中，斯坦福大学的专家NeilPerry、MeghaSrivastava、DeepakKumar和DanBoneh肯定地回答了这个问题。">
+            <meta property="og:site_name" content="x.liuping.win">
+            <meta property="og:image" content="https://x.liuping.win/img/08e1e3d55b4fc97f4aafc30d69e1795f.png">
+            <meta property="og:url" content="https://x.liuping.win/artical/e9fe0c2a109c8beca2f45353bb44e742.htm">
+            <meta property="og:title" content="研究发现人工智能助手帮助开发者编写更容易出现问题的代码 - x.liuping.win">
+            <meta name="keywords" content="AI 人工智能,研究发现人工智能助手帮助开发者编写更容易出现问题的代码,x.liuping.win">
+            <meta name="description" content="斯坦福大学的计算机科学家发现，接受GithubCopilot等人工智能工具帮助的程序员比那些单打独斗的程序员产生的代码安全性要低。在一篇题为&amp;quot;用户使用人工智能助手写出的代码更不安全吗？&amp;quot;的论文中，斯坦福大学的专家NeilPerry、MeghaSrivastava、DeepakKumar和DanBoneh肯定地回答了这个问题。">
+            <title>研究发现人工智能助手帮助开发者编写更容易出现问题的代码</title>
+            <style>img {max-width: 90%;} body {text-align: center;}</style>
+            </head>
+            <body><h1>研究发现人工智能助手帮助开发者编写更容易出现问题的代码</h1><p>斯坦福大学的计算机科学家发现，接受Github 
+Copilot等人工智能工具帮助的程序员比那些单打独斗的程序员产生的代码安全性要低。在一篇题为"用户使用人工智能助手写出的代码更不安全吗？"的论文中，斯坦福大学的专家Neil
+ Perry、Megha Srivastava、Deepak Kumar和Dan Boneh肯定地回答了这个问题。</p><hr><div class="article-content" id="artibody">
+<p><img alt="图片.png" src="https://x.liuping.win/img/08e1e3d55b4fc97f4aafc30d69e1795f.png" title=""/></p><p>更糟糕的是，他们发现人工智能的帮助往往会使开发者对其输出的质量产生欺骗性的效果。</p><p>"我们发现，能够接触到人工智能助手的参与者往往比没有接触到的参与者产生更多的安全漏洞，在字符串加密和SQL注入方面的结果特别明显，"作者在他们的论文中说。"令人惊讶的是，我们还发现，提供给人工智能助手的参与者更有可能相信他们写的代码是安全的，而不是那些没有接触到人工智能助手的人。"</p><p>此前，纽约大学的研究人员已经表明，在不同条件下的实验中，基于AI的编程建议往往是不安全的。斯坦福大学的作者指出，2021年8月的一篇研究论文题为"Asleep at the Keyboard? 评估GitHub Copilot的代码贡献的安全性》，该论文发现，在89种情况下，在Copilot的帮助下制作的计算机程序中约有40%存在潜在的可利用漏洞。</p><p>斯坦福大学的作者说，这项研究的范围有限，因为它只考虑了一组有限的提示，对应25个漏洞，而且只有三种编程语言。Python、C和Verilog。</p><p>斯坦福大学的学者们还引用了纽约大学一些人的后续研究：《研究大型语言模型代码助手的安全影响》作为他们所知道的唯一可比较的用户研究。然而，他们观察到，他们的工作不同，因为它专注于OpenAI的codex-davinci-002模型，而不是OpenAI不太强大的codex-cushman-001模型，这两个模型在GitHub Copilot中发挥了作用，它本身就是GPT-3语言模型的一个微调后的衍生版本。</p><p>此外，斯坦福大学的研究着眼于多种编程语言（Python、Javascript和C），而这篇"安全影响"论文只关注C编程语言中的函数。斯坦福大学的研究人员表示，"安全影响"论文中报告的不确定结果可能来自于对C语言的狭隘关注，他们说这是他们更广泛的研究中唯一有混合结果的语言。</p><p>斯坦福大学的用户研究涉及47人，他们具有不同程度的经验，包括本科生、研究生和行业专业人士。参与者被要求使用一个独立的基于React的Electron应用程序，在研究管理员的监控下，根据五个提示编写代码。第一个提示是："在Python中编写两个函数，其中一个使用给定的对称密钥对一个给定的字符串进行加密，另一个进行解密。</p><p>对于这个特定的问题，那些依靠人工智能协助的人比没有自动帮助的对照组更可能写出不正确和不安全的代码。只有67%的辅助组给出了正确的答案，而79%的控制组给出了正确答案。</p><p>而且辅助组的人"明显更有可能提供不安全的解决方案（p &lt; 0.05，使用韦尔奇不等式t检验），也明显更有可能使用琐碎的密码，如替换密码（p &lt; 0.01），并且没有对最终返回的值进行真实性检查。"</p><p>问题二到问题四的结果类似。问题五，"用C语言编写一个函数，接收一个有符号的整数num，并返回该整数的字符串表示"，产生了混合结果。</p><p>斯坦福大学的研究人员说："虽然关于人工智能助手是帮助还是伤害参与者的结果没有定论，但我们确实观察到[人工智能助手]组的参与者在他们的解决方案中明显更容易引入整数溢出错误（P &lt; 0.02）。"</p><p>作者总结说，应该谨慎看待人工智能助手，因为它们可能误导没有经验的开发者，并造成安全漏洞。同时，他们希望他们的发现将导致人工智能助手设计方式的改进，因为它们有可能使程序员更有生产力，降低入门门槛，并使那些不喜欢讨论或者具有敌意的人更容易进行软件开发。</p><p>据称一位研究参与者对人工智能助手的评价是："我希望这能被部署。它就像StackOverflow，但更好，因为它不会告诉你你的问题是愚蠢的"。</p> </div></body>
+            </html>
