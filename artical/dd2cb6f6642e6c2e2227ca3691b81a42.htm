@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+            <html><head>
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta charset="utf-8">
+            <meta property="og:type" content="article">
+            <meta property="og:locale" content="zh_CN">
+            <meta property="og:description" content="很难否认，微软的Windows7是最受欢迎的操作系统之一，尽管已经过去多年，但它依然有许多值得珍惜的功能，有人会说它的影响与之前的Windows95和WindowsXP一样大，这也是有道理的。虽然对Windows7的支持在两年多以前就结束了，但这个2009年的操作系统仍然是第三大最受欢迎的系统，约占10%的市场份额。">
+            <meta property="og:site_name" content="x.liuping.win">
+            <meta property="og:image" content="https://x.liuping.win/img/94c90adf5c2d1f6936b1b044967009ff.jpg">
+            <meta property="og:url" content="https://x.liuping.win/artical/dd2cb6f6642e6c2e2227ca3691b81a42.htm">
+            <meta property="og:title" content="Windows 7被证明可以在5MHz奔腾+128MB内存配置的PC上运行 - x.liuping.win">
+            <meta name="keywords" content="Windows 7,Windows 7被证明可以在5MHz奔腾+128MB内存配置的PC上运行,x.liuping.win">
+            <meta name="description" content="很难否认，微软的Windows7是最受欢迎的操作系统之一，尽管已经过去多年，但它依然有许多值得珍惜的功能，有人会说它的影响与之前的Windows95和WindowsXP一样大，这也是有道理的。虽然对Windows7的支持在两年多以前就结束了，但这个2009年的操作系统仍然是第三大最受欢迎的系统，约占10%的市场份额。">
+            <title>Windows 7被证明可以在5MHz奔腾+128MB内存配置的PC上运行</title>
+            <style>img {max-width: 90%;} body {text-align: center;}</style>
+            </head>
+            <body><h1>Windows 7被证明可以在5MHz奔腾+128MB内存配置的PC上运行</h1><p>很难否认，微软的Windows 
+7是最受欢迎的操作系统之一，尽管已经过去多年，但它依然有许多值得珍惜的功能，有人会说它的影响与之前的Windows 95和Windows 
+XP一样大，这也是有道理的。虽然对Windows 
+7的支持在两年多以前就结束了，但这个2009年的操作系统仍然是第三大最受欢迎的系统，约占10%的市场份额。</p><hr><div class="article-content" id="artibody">
+<p><img alt="1672124462_win_7_5mhz_cpu_thumbnail_(source-_ntdev_twitter).jpg" src="https://x.liuping.win/img/94c90adf5c2d1f6936b1b044967009ff.jpg" title=""/></p><p>其受欢迎的原因之一是其有意义的系统要求，因为它实际上可以在其最低要求以下，甚至极端情况下运行良好。用户只需要一个1GHz单核CPU和1GB（32位）/2GB（64位）系统内存就可以运行。尽管要求如此之低，但该系统也被设计为在64位模式下支持多达256个内核/线程，这突出表明它是相当具有前瞻性的。尽管微软在Windows 10之前一直坚持同样的要求，但在新的更重的操作系统上一般不会有如此流畅的体验。</p><p>为了测试Windows 7可以在多低的硬件配置下运行，Twitter用户和Windows爱好者NTDEV尝试在5MHz奔腾-S处理器--比官方要求低200倍搭配128MB内存的机器上运行它。你可能会注意到在下面的图片中，奔腾芯片的运行频率是50MHz。NTDEV在此指出，由于LogonUI拒绝在低于这个频率的情况下加载，5MHz的时钟是通过编辑86Box的虚拟机源代码实现的。</p><p><img alt="1672124473_win_7_5mhz_system_specs_(source-_ntdev_youtube)_(1).jpg" src="https://x.liuping.win/img/98f69cd6f89e1da92832ba50a7d5617c.jpg" title=""/></p><p>除此以外，测试者为了进入系统还做了几个主要的修改。整个OOBE文件夹（c:\windows\system32\oobe文件夹）被删除，并对注册表进行了调整以模拟"伪OOBE状态"。BCD（启动配置数据）也进行了调整，以便在选择"正常启动Windows"选项时也能启动到安全模式。为了进一步降低系统需求，GUI元素也被禁用。</p><p>NTDEV在大约28分钟后成功启动到Windows 7 Ultimate build 7601 SP1。系统很稳定，WCPUCLK或Real TIme Clock Checker确认系统确实运行在5Mhz。</p><p><img alt="1672124467_win_7_5mhz_cpu_(source-_ntdev_twitter).jpg" src="https://x.liuping.win/img/0c2a7c6507a271b655fd134bdde2ca37.jpg" title=""/></p><p>当然这只是一个有趣的实验，大多数仍在运行Windows 7作为他们的日常驱动的人可能是在更快的PC上这样做。如果那台电脑恰好符合Windows 11的要求，微软说你当然可以升级到其最新的操作系统，尽管这需要进行清洁安装。</p> </div></body>
+            </html>
