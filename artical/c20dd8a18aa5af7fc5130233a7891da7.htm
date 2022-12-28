@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+            <html><head>
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta charset="utf-8">
+            <meta property="og:type" content="article">
+            <meta property="og:locale" content="zh_CN">
+            <meta property="og:description" content="ThomasWeißschuh今天发出了一组补丁，旨在减少编译Linux内核时的最大内存用量。反过来，对于试图编译内核的内存受限的系统，这可以带来更少的交换过程和更快的构建时间。特别之处在于他瞄准了用objtool处理vmlinux.o对象的内存使用，这是内核构建过程中最密集的内存步骤。">
+            <meta property="og:site_name" content="x.liuping.win">
+            <meta property="og:image" content="https://x.liuping.win/img/6c1502a074be7ae0f5e47169f8ea164e.png">
+            <meta property="og:url" content="https://x.liuping.win/artical/c20dd8a18aa5af7fc5130233a7891da7.htm">
+            <meta property="og:title" content="新的补丁旨在减少编译Linux内核时的内存占用 - x.liuping.win">
+            <meta name="keywords" content="Linux,新的补丁旨在减少编译Linux内核时的内存占用,x.liuping.win">
+            <meta name="description" content="ThomasWeißschuh今天发出了一组补丁，旨在减少编译Linux内核时的最大内存用量。反过来，对于试图编译内核的内存受限的系统，这可以带来更少的交换过程和更快的构建时间。特别之处在于他瞄准了用objtool处理vmlinux.o对象的内存使用，这是内核构建过程中最密集的内存步骤。">
+            <title>新的补丁旨在减少编译Linux内核时的内存占用</title>
+            <style>img {max-width: 90%;} body {text-align: center;}</style>
+            </head>
+            <body><h1>新的补丁旨在减少编译Linux内核时的内存占用</h1><p>Thomas Weißschuh今天发出了一组补丁，旨在减少编译Linux内核时的最大内存用量。反过来，对于试图编译内核的内存受限的系统，这可以带来更少的交换过程和更快的构建时间。特别之处在于他瞄准了用objtool处理vmlinux.o对象的内存使用，这是内核构建过程中最密集的内存步骤。</p><hr><div class="article-content" id="artibody">
+<p><strong>访问新闻组以了解更多：</strong></p><p>https://lore.kernel.org/lkml//</p><p><img alt="图片.png" src="https://x.liuping.win/img/6c1502a074be7ae0f5e47169f8ea164e.png" title=""/></p><p>这组8个补丁对objtool的代码进行了调整，以减少内存的使用。特别是，在objtool代码中，从循环中的malloc()切换到循环外的calloc()，在处理vmlinux.o时，峰值内存使用量减少了3.7%。</p><p>在另一个由Thomas建立的内核中，减少了struct reloc的内存使用量又减少了3.8%。优化结构符号的布局降低了0.5%的内存使用量，同时还有其他一些优化。</p><p>这个正在审查的补丁系列应该有助于减少编译Linux内核时的峰值内存使用，并反过来帮助构建，特别是对于内存数量有限的系统，否则在构建过程中可能会遇到交换问题，反过来会导致构建速度下降。</p> </div></body>
+            </html>
