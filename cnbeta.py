@@ -89,8 +89,11 @@ def parse_artical(url):
             <meta property="og:type" content="article">
             <meta property="og:locale" content="zh_CN">
             <meta property="og:description" content="{soup.select_one("meta[property='og:description']")['content']}">
-            <meta property="og:site_name" content="x.liuping.win">
-            <meta property="og:image" content="{parse_img(soup.select_one("meta[property='og:image']")['content'])}">
+            <meta property="og:site_name" content="x.liuping.win">'''
+        if soup.select_one("meta[property='og:image']") is not None:
+            page = page + f'''
+            <meta property="og:image" content="{parse_img(soup.select_one("meta[property='og:image']")['content'])}">'''
+        page = page + f'''
             <meta property="og:url" content="{SERVER_NAME + '/artical/' + p}">
             <meta property="og:title" content="{title} - x.liuping.win">
             <meta name="keywords" content="{soup.select_one("meta[name='keywords']")['content'].replace('cnBeta','x.liuping.win')}">
