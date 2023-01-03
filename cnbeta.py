@@ -54,7 +54,7 @@ def parse_img(url):
         if not Path(sys.path[0] + '/img/' + p).exists():
             with open(sys.path[0] + '/img/' + p, 'wb') as f:
                 f.write(r.content)
-    except Exception,err:
+    except Exception as err:
         print("error", err)
     return SERVER_NAME + '/img/' +  p
 
