@@ -48,11 +48,14 @@ def parse_img(url):
     print('-----img:', url)
     if url.startswith("//"):
         url = "https:" + url
-    r = requests.get(url)
     p = hashlib.md5(url.encode(encoding='UTF-8')).hexdigest() + url[url.rindex('.'):]
-    if not Path(sys.path[0] + '/img/' + p).exists():
-        with open(sys.path[0] + '/img/' + p, 'wb') as f:
-            f.write(r.content)
+    try:
+        r = requests.get(url)
+        if not Path(sys.path[0] + '/img/' + p).exists():
+            with open(sys.path[0] + '/img/' + p, 'wb') as f:
+                f.write(r.content)
+    except Exception,err:
+        print("error", err)
     return SERVER_NAME + '/img/' +  p
 
 def parse_artical(url):
