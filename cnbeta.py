@@ -45,7 +45,7 @@ headers = {
 }
 
 def parse_img(url):
-    print('-----img')
+    print('-----img:', url)
     if url.startswith("//"):
         url = "https:" + url
     r = requests.get(url)
