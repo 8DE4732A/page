@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+            <html><head>
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta charset="utf-8">
+            <meta property="og:type" content="article">
+            <meta property="og:locale" content="zh_CN">
+            <meta property="og:description" content="“所有在2022年12月25日至12月30日期间，在Linux系统安装了PyTorch-nightly（每日更新版）的用户，请立即卸载！”上述消息来自PyTorch官方的一则最新声明。">
+            <meta property="og:site_name" content="x.liuping.win">
+            <meta property="og:image" content="https://x.liuping.win/img/0508f03fcd310a48b00f3a934b708065.webp">
+            <meta property="og:url" content="https://x.liuping.win/artical/8ce6db41991f9c461705041716cf0c7f.htm">
+            <meta property="og:title" content="PyTorch安装包出问题 Linux用户请立即卸载 否则会遭数据泄漏 - x.liuping.win">
+            <meta name="keywords" content="安全,PyTorch安装包出问题 Linux用户请立即卸载 否则会遭数据泄漏,x.liuping.win">
+            <meta name="description" content="“所有在2022年12月25日至12月30日期间，在Linux系统安装了PyTorch-nightly（每日更新版）的用户，请立即卸载！”上述消息来自PyTorch官方的一则最新声明。">
+            <title>PyTorch安装包出问题 Linux用户请立即卸载 否则会遭数据泄漏</title>
+            <style>img {max-width: 90%;} body {text-align: center;}</style>
+            </head>
+            <body><h1>PyTorch安装包出问题 Linux用户请立即卸载 否则会遭数据泄漏</h1><p>“所有在2022年12月25日至12月30日期间，在Linux系统安装了<strong>PyTorch-nightly</strong>（每日更新版）的用户，<strong>请立即卸载</strong>！”上述消息来自PyTorch官方的一则最新声明。</p><hr><div class="article-content" id="artibody">
+<p><img src="https://x.liuping.win/img/0508f03fcd310a48b00f3a934b708065.webp"/><br/></p><p>据官方透露，他们刚刚识别出一个与框架的“torchtriton”库同名的恶意依赖项，该依赖项在PyPI代码库上被破坏，并运行恶意二进制文件。</p><p>攻击者试图窃取用户IP地址、当前工作目录等<strong>敏感数据</strong>并<strong>上传到指定地址</strong>，相关恶意代码在从PyPI删除之前<strong>已被下载2300+次</strong>。</p><p>不过就在事情一面倒时，攻击者却自己发表了声明，坚称<strong>并无恶意</strong>，一切只是为了道德研究。</p><p>那么——</p><p>到底发生了什么？</p><p>具体事情是这样的：</p><p>攻击者在<strong>Python的官方索引库：PyPI</strong> （Python Package Index），创建了一个叫“torchtriton”的Python软件包。</p><p><img src="https://x.liuping.win/img/35763422aa21589f2d28f7a168a800d2.webp"/><br/></p><p><strong>为何取这个名字？</strong></p><p>当然是故意的。</p><p>这样就能和PyTorch本身有的一个包名字相匹配，好比玩起了Cosplay。</p><p>然后，由于名字相同，“假torchtriton”就被跟着上传到了PyPI中。</p><p>又因为PyPI索引具有优先权，所以假torchtriton就被默认安装到用户的设备上了，而真正的官方版本却被搁置到一旁。</p><p>这就是所谓的供应链攻击，在公共软件包索引上，被托管的软件包之间的的依赖关系都受到了直接影响。</p><p>不出所料，这个假torchtriton自带一肚子坏水：</p><p><strong>它比官方版多了上传敏感数据的代码，还包含一个恶意的triton二进制文件。</strong></p><p>一旦被安装在用户设备上，它就可以入侵系统，窃取用户的重要数据，比如：主机名、用户名、系统中的已知用户，以及SSH密钥等。</p><p>据悉用户的列表是从/etc/passwd中提取的，幸运的是，它实际上并不包含任何密码或密码哈希值。</p><p>至于SSH密钥，这是安全外壳 （SSH）协议中使用的安全访问凭证，也是Linux服务器运维的关键。</p><p>有网友指出：</p><p>关于SSH密钥，Linux存在一些漏洞，而iOS和Android的安全模型就不会允许Python软件包窃取SSH密钥。</p><p>不过，最好的解决方案是实施最小权限原则，不要给程序授予任何不必要的权限。</p><p>另外，或许也可以考虑请雇人检查软件包。</p><p><img src="https://x.liuping.win/img/2e2cd159839a5c5f9efc80d16c36d704.webp"/><br/></p><p>用户这边，如果你记不清自己下载的是哪个版本，官方给出了一个检查的办法：</p><p><img src="https://x.liuping.win/img/a282cfb253726b3631e52e587a15e1fe.webp"/><br/></p><p><strong>事件后续</strong></p><p>在官方声明中，PyTorch也提出了他们的解决策略。</p><p>PyTorch将“ torchtriton”依赖项重命名为“ PyTorch- triton”，并在PyPI上保留了一个虚拟包，以防止类似的攻击。</p><p><img src="https://x.liuping.win/img/8e4919510968e6c211155678daf4e966.webp"/><br/></p><p>同时，官方也发推呼吁在2022年12月25日至12月30日期间下载了恶意版本的用户立即卸载，并使用最新版本。</p><p>事情进一步发酵后，有媒体顺藤摸瓜，根据被盗数据传输到的域名，找到了该域名背后的所有者。</p><p>公共记录显示，该域名于12月21日刚刚注册，就在Pytorch事件发生的几天前。</p><p>据Bleeping Computer消息，这位所有者坚称自己的做法“不是恶意的”，只是为了道德研究，而且所有数据都已删除。</p><p>我为此承担责任并道歉。与此同时，我想向你们保证，我无意窃取别人的秘密。</p><p>我已经在12月29日(几乎是官方宣布的三天前)在确认漏洞存在后向Facebook报告了这个问题。</p><p>我还通过HackerOne向其他可能受到影响的公司提交了报告。</p><p>如果我是恶意的，我将永远不会填写任何漏洞赏金报告，而是只把数据出售给出价最高的人。</p><p>对于发送许多用户敏感数据的原因，他进一步解释：</p><p>在过去调查依赖混淆攻击时，大多数情况下不可能根据受害者的主机名、用户名和CWD来识别他们。</p><p>这就是我这次决定发送更多数据的原因，但是回顾过去，这是一个错误的决定，我应该更加谨慎。</p><p>对于攻击者的这一说法，目前PyTorch官方还未做出回应。</p><p>对这次PyTorch事件，你怎么看？</p> </div></body>
+            </html>
