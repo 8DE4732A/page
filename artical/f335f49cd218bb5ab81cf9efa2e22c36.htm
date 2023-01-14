@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+            <html><head>
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta charset="utf-8">
+            <meta property="og:type" content="article">
+            <meta property="og:locale" content="zh_CN">
+            <meta property="og:description" content="恶意黑客已经开始利用ControlWebPanel未打补丁版本中的一个关键漏洞，这是一个被广泛使用的虚拟主机界面。&quot;这是一个未经认证的RCE（远程代码利用）&quot;Shadowserver组织的成员在Twitter上写道，PoC已经在流传，这指的是利用该漏洞的概念验证代码。">
+            <meta property="og:site_name" content="x.liuping.win">
+            <meta property="og:image" content="https://x.liuping.win/img/60b52aad7da1a0c62938bc9fe8ace5e4.png">
+            <meta property="og:url" content="https://x.liuping.win/artical/f335f49cd218bb5ab81cf9efa2e22c36.htm">
+            <meta property="og:title" content="Control Web Panel中严重程度为9.8的高危漏洞正在被积极利用中 - x.liuping.win">
+            <meta name="keywords" content="安全,Control Web Panel中严重程度为9.8的高危漏洞正在被积极利用中,x.liuping.win">
+            <meta name="description" content="恶意黑客已经开始利用ControlWebPanel未打补丁版本中的一个关键漏洞，这是一个被广泛使用的虚拟主机界面。&amp;quot;这是一个未经认证的RCE（远程代码利用）&amp;quot;Shadowserver组织的成员在Twitter上写道，PoC已经在流传，这指的是利用该漏洞的概念验证代码。">
+            <title>Control Web Panel中严重程度为9.8的高危漏洞正在被积极利用中</title>
+            <style>img {max-width: 90%;} body {text-align: center;}</style>
+            </head>
+            <body><h1>Control Web Panel中严重程度为9.8的高危漏洞正在被积极利用中</h1><p>恶意黑客已经开始利用Control Web Panel未打补丁版本中的一个关键漏洞，这是一个被广泛使用的虚拟主机界面。"这是一个未经认证的RCE（远程代码利用）"Shadowserver组织的成员在Twitter上写道，PoC已经在流传，这指的是利用该漏洞的概念验证代码。</p><hr><div class="article-content" id="artibody">
+<p><img alt="图片.png" src="https://x.liuping.win/img/60b52aad7da1a0c62938bc9fe8ace5e4.png" title=""/><br/></p><p>该漏洞被追踪为CVE-2022-44877。它是由Gais Cyber Security的Numan Türle发现的，并在10月的0.9.8.1147版本中打了补丁。然而，通知直到本月初才公开，这使得一些用户可能仍然没有意识到这种威胁。</p><p>安全公司GreyNoise提供的数据显示，一系列针对Control Web Panel的攻击从1月7日开始，此后慢慢增加，最近一轮的攻击持续到周三。该公司说，这些漏洞来自位于美国、荷兰和泰国的四个独立IP地址。</p><p>Shadowserver显示，大约有38000个IP地址在运行Control Web Panel，最流行的地方是欧洲，其次是北美和亚洲。</p><p>CVE-2022-44877的严重性评级为9.8，满分为10，危害程度可见一斑。</p><p>"Bash命令可以被运行，因为双引号被用来向系统记录不正确的条目，"该漏洞的咨询报告称。因此，未经认证的黑客可以在登录过程中执行恶意命令。</p><p>据Daily Swig报道，该漏洞存在于/login/index.php组件中，由于CWP在记录不正确的条目时使用了错误的结构，导致该严重漏洞的产生。该结构是： echo"incorrect entry, IP address, HTTP_REQUEST_URI"&gt;&gt; /blabla/wrong.log。"由于请求URI来自用户，而且你可以看到它在双引号内，所以有可能运行$(blabla)这样的命令，这是一个bash功能，"Türle表示。</p><p>考虑到利用的简易性和严重性，以及可用的利用代码，使用Control Web Panel的组织应确保他们运行的是0.9.8.1147或更高版本。</p> </div></body>
+            </html>
