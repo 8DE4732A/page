@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+            <html><head>
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta charset="utf-8">
+            <meta property="og:type" content="article">
+            <meta property="og:locale" content="zh_CN">
+            <meta property="og:description" content="2022年3月的GTC技术大会上，NVIDIA正式发布了首款数据中心CPU——Grace，同时打造了两颗超级芯片，一是GraceCPU二合一，二是GraceCPU＋HopperGPU二合一。现在，NVIDIA官方详细揭示了GraceSuperchip超级芯片的设计与性能、能效。">
+            <meta property="og:site_name" content="x.liuping.win">
+            <meta property="og:image" content="https://x.liuping.win/img/dec2beff5dd5312c91309944afae3a22.png">
+            <meta property="og:url" content="https://x.liuping.win/artical/bdf6906aeb164447921014ae9c8461e1.htm">
+            <meta property="og:title" content="NVIDIA 144核心超级CPU揭秘：3.5倍能效碾压AMD 128核心 - x.liuping.win">
+            <meta name="keywords" content="nVIDIA,NVIDIA 144核心超级CPU揭秘：3.5倍能效碾压AMD 128核心,x.liuping.win">
+            <meta name="description" content="2022年3月的GTC技术大会上，NVIDIA正式发布了首款数据中心CPU——Grace，同时打造了两颗超级芯片，一是GraceCPU二合一，二是GraceCPU＋HopperGPU二合一。现在，NVIDIA官方详细揭示了GraceSuperchip超级芯片的设计与性能、能效。">
+            <title>NVIDIA 144核心超级CPU揭秘：3.5倍能效碾压AMD 128核心</title>
+            <style>img {max-width: 90%;} body {text-align: center;}</style>
+            </head>
+            <body><h1>NVIDIA 144核心超级CPU揭秘：3.5倍能效碾压AMD 128核心</h1><p>2022年3月的GTC技术大会上，NVIDIA正式发布了首款数据中心CPU——Grace，同时打造了两颗超级芯片，一是Grace CPU二合一，二是Grace CPU＋Hopper GPU二合一。现在，NVIDIA官方详细揭示了<strong>Grace Superchip超级芯片</strong>的设计与性能、能效。</p><hr><div class="article-content" id="artibody">
+<p style="text-align: center;"><img src="https://x.liuping.win/img/dec2beff5dd5312c91309944afae3a22.png"/></p><p style="text-align: center;">Grace CPU二合一</p><p style="text-align: center;"><img src="https://x.liuping.win/img/af1e31e25f41e882d10eb37d9014a466.jpg"/></p><p style="text-align: center;">Grace CPU＋Hopper GPU二合一</p><p><strong>它通过NVLink-C2C芯片间互连总线，将两颗Grace CPU整合在一块基板上，彼此之间的双向带宽多达900GB/s。</strong></p><p><img src="https://x.liuping.win/img/f8d5ac13ce1908624544fd7b65f7a4c3.jpg"/></p><p>Grace CPU基于<strong>Armv9-A 9.0架构、Neoverse V2 64位内核</strong>，以4个128-bit功能单元的方式配置了两组SIMD矢量指令集，一是SVE 2(缩放矢量扩展第二版)，二是NEON(高级SIMD)。</p><p>它还支持LSE(大型系统扩展)，可提供低成本的原子操作，改进CPU通信吞吐。</p><p>NVIDIA声称，这种核心的能效，是如今服务器常见x86核心的2倍。</p><p><img src="https://x.liuping.win/img/225d298f495eadccfb7c5ae27e5ce337.png"/></p><p><img src="https://x.liuping.win/img/8471a7a04a329afddb271e50588d9d44.png"/></p><p><strong>Grace CPU单颗集成72个核心</strong>，互相通过3.2TB/s超高带宽的NVIDIA缩放一致性Fabric总线互连，而二合一的超级芯片上就是144个核心。</p><p>每核心64KB一级指令缓存、64KB一级数据缓存、1MB二级缓存，一颗超级芯片的所有核心共享<strong>234MB三级缓存。</strong></p><p><img src="https://x.liuping.win/img/d979c1a3e2fc97431640c2b266549ba5.png"/></p><p>内存整合封装了L<strong>PDDR5X</strong>，最大容量<strong>960GB</strong>，最高带宽1TB/s(每一颗500GB/s)，还支持ECC。</p><p>对比传统的八通道DDR5，这种设计不但带宽高出53％，单位功耗也只有1/8。</p><p>对比海量带宽的HBM2e，单位成本只有1/3，容量则可达8倍。</p><p>扩展支持<strong>八组PCIe 5.0 x16</strong>，总带宽1TB/s，还有用于管理的低速PCIe通道。</p><p><img src="https://x.liuping.win/img/2cc245f31206b202ce9fecb1d0c2fe5e.png"/></p><p>性能方面，<strong>一颗超级芯片的FP64双精度峰值浮点性能可达7.1TFlops(每秒7.1万亿次计算)，热设计功耗500W。</strong></p><p><strong>NVIDIA对比了AMD Zen3架构的霄龙7763 64核心，双路组成128核心，号称性能可领先1.5-2.5倍，能效可领先2.0-3.5倍！</strong></p><p>当然，AMD已经有了Zen4架构、最多96核心的霄龙9004系列，NVIDIA Grace依然还没有商用。</p><p><img src="https://x.liuping.win/img/69abb9539c9b7ee2c12d6baa2aab14e3.png"/></p><p><img src="https://x.liuping.win/img/cc8b55d9668a0f92ce81957a72457973.png"/></p> </div></body>
+            </html>
