@@ -1,18 +1,20 @@
 import requests
 import sys
+import os
 import hashlib
 from datetime import datetime, timedelta
 from pathlib import Path
 from bs4 import BeautifulSoup
+import shutil
 
 
 SERVER_NAME = 'https://x.liuping.win'
 
 proxies =  {
-   'http': 'http://127.0.0.1:7890',
-   'https': 'http://127.0.0.1:7890',
+   'http': 'http://172.20.16.1:10809',
+   'https': 'http://172.20.16.1:10809',
 }
-proxies = None
+# proxies = None
 
 hot_headers = {
     'authority': 'hot.cnbeta.com.tw',
@@ -56,9 +58,14 @@ def parse_img(url):
                 f.write(r.content)
     except Exception as err:
         print("error", err)
+    try:
+        shutil.copy(sys.path[0] + '/img/' + p, sys.path[0] + '/public/img/' + p)
+    except Exception as err:
+        print("error", err)
+
     return SERVER_NAME + '/img/' +  p
 
-def parse_artical(url):
+def parse_artical(url, ):
     print('-----artical')
     print(url)
     p = hashlib.md5(url.encode(encoding='UTF-8')).hexdigest() + url[url.rindex('.'):]
@@ -108,6 +115,10 @@ def parse_artical(url):
             </html>'''
         with open(sys.path[0] + '/artical/' + p, 'w+', encoding='utf-8') as f:
             f.write(page)
+    try:
+        shutil.copy(sys.path[0] + '/artical/' + p, sys.path[0] + '/public/artical/' + p)
+    except Exception as err:
+        print("error", err)
     return SERVER_NAME + '/artical/' + p
 
 
@@ -134,7 +145,17 @@ def parse_index():
         </head>
         <body>{s}{articals}</body>
         </html>''')
+    try:
+        shutil.copy(sys.path[0] + '/index.html', sys.path[0] + '/public/index.html')
+    except Exception as err:
+        print("error", err)
         
 
 if __name__ == '__main__':
+    if Path(sys.path[0] + '/public/img').exists():
+        shutil.rmtree(sys.path[0] + '/public/img/')
+    if Path(sys.path[0] + '/public/artical').exists():
+        shutil.rmtree(sys.path[0] + '/public/artical/')
+    os.mkdir(sys.path[0] + '/public/img/')
+    os.mkdir(sys.path[0] + '/public/artical/')
     parse_index()
