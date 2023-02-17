@@ -14,7 +14,7 @@ proxies =  {
    'http': 'http://172.20.16.1:10809',
    'https': 'http://172.20.16.1:10809',
 }
-# proxies = None
+proxies = None
 
 hot_headers = {
     'authority': 'hot.cnbeta.com.tw',
