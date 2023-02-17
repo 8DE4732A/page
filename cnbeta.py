@@ -69,50 +69,50 @@ def parse_artical(url, ):
     print('-----artical')
     print(url)
     p = hashlib.md5(url.encode(encoding='UTF-8')).hexdigest() + url[url.rindex('.'):]
-    if not Path(sys.path[0] + '/artical/' + p).exists():
-        r = None
-        if url.startswith('//hot.cnbeta.com.tw'):
-            url = 'https:' + url
-            r = requests.get(url, headers=hot_headers, proxies=proxies)
-        else:
-            r = requests.get(url, headers=headers, proxies=proxies)
-        r.encoding = 'utf-8'
-        soup = BeautifulSoup(r.text, 'html.parser')
-        title = soup.select_one('.cnbeta-article > header > h1').string
-        print('title:', title)
-        summary = soup.select_one('.article-summary > p')
-        content = soup.select_one('.article-content')
-        for one in content.select('.article-topic'):
-            one.decompose()
-        for a in content.select('a'):
-            for one in a.children:
-                a.insert_before(one)
-            a.decompose()
-        for img in content.select('img'):
-            img['src'] = parse_img(img['src'])
-            if img.parent.name == 'a' and img.parent.has_attr('href'):
-                img.parent['href'] = img['src']
-        page = f'''<!DOCTYPE html>
-            <html><head>
-            <meta name="viewport" content="width=device-width,initial-scale=1">
-            <meta charset="utf-8">
-            <meta property="og:type" content="article">
-            <meta property="og:locale" content="zh_CN">
-            <meta property="og:description" content="{soup.select_one("meta[property='og:description']")['content']}">
-            <meta property="og:site_name" content="x.liuping.win">'''
-        if soup.select_one("meta[property='og:image']") is not None:
-            page = page + f'''
-            <meta property="og:image" content="{parse_img(soup.select_one("meta[property='og:image']")['content'])}">'''
+    r = None
+    if url.startswith('//hot.cnbeta.com.tw'):
+        url = 'https:' + url
+        r = requests.get(url, headers=hot_headers, proxies=proxies)
+    else:
+        r = requests.get(url, headers=headers, proxies=proxies)
+    r.encoding = 'utf-8'
+    soup = BeautifulSoup(r.text, 'html.parser')
+    title = soup.select_one('.cnbeta-article > header > h1').string
+    print('title:', title)
+    summary = soup.select_one('.article-summary > p')
+    content = soup.select_one('.article-content')
+    for one in content.select('.article-topic'):
+        one.decompose()
+    for a in content.select('a'):
+        for one in a.children:
+            a.insert_before(one)
+        a.decompose()
+    for img in content.select('img'):
+        img['src'] = parse_img(img['src'])
+        if img.parent.name == 'a' and img.parent.has_attr('href'):
+            img.parent['href'] = img['src']
+    page = f'''<!DOCTYPE html>
+        <html><head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <meta property="og:type" content="article">
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:description" content="{soup.select_one("meta[property='og:description']")['content']}">
+        <meta property="og:site_name" content="x.liuping.win">'''
+    if soup.select_one("meta[property='og:image']") is not None:
         page = page + f'''
-            <meta property="og:url" content="{SERVER_NAME + '/artical/' + p}">
-            <meta property="og:title" content="{title} - x.liuping.win">
-            <meta name="keywords" content="{soup.select_one("meta[name='keywords']")['content'].replace('cnBeta','x.liuping.win')}">
-            <meta name="description" content="{soup.select_one("meta[name='description']")['content']}">
-            <title>{title}</title>
-            <style>img {{max-width: 90%;}} body {{text-align: center;}}</style>
-            </head>
-            <body><h1>{title}</h1>{str(summary)}<hr>{str(content)}</body>
-            </html>'''
+        <meta property="og:image" content="{parse_img(soup.select_one("meta[property='og:image']")['content'])}">'''
+    page = page + f'''
+        <meta property="og:url" content="{SERVER_NAME + '/artical/' + p}">
+        <meta property="og:title" content="{title} - x.liuping.win">
+        <meta name="keywords" content="{soup.select_one("meta[name='keywords']")['content'].replace('cnBeta','x.liuping.win')}">
+        <meta name="description" content="{soup.select_one("meta[name='description']")['content']}">
+        <title>{title}</title>
+        <style>img {{max-width: 90%;}} body {{text-align: center;}}</style>
+        </head>
+        <body><h1>{title}</h1>{str(summary)}<hr>{str(content)}</body>
+        </html>'''
+    if not Path(sys.path[0] + '/artical/' + p).exists():
         with open(sys.path[0] + '/artical/' + p, 'w+', encoding='utf-8') as f:
             f.write(page)
     try:
