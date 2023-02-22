@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+        <html><head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <meta property="og:type" content="article">
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:description" content="内核团队今天提交了Linux6.3内核的网络子系统功能更新，不仅有一些突出的网络驱动增强功能和新的有线/无线硬件支持，还有一些核心的网络改进，如IPv4的BIGTCP。">
+        <meta property="og:site_name" content="x.liuping.win">
+        <meta property="og:image" content="https://x.liuping.win/img/2b90dfff8af7f7741295ffa7b6341347.webp">
+        <meta property="og:url" content="https://x.liuping.win/artical/79eee4fce1e5783ede75c5b7dadd814c.htm">
+        <meta property="og:title" content="Linux 6.3引入IPv4 "BIG TCP "以提高高速网络性能 - x.liuping.win">
+        <meta name="keywords" content="Linux,Linux 6.3引入IPv4 &quot;BIG TCP &quot;以提高高速网络性能,x.liuping.win">
+        <meta name="description" content="内核团队今天提交了Linux6.3内核的网络子系统功能更新，不仅有一些突出的网络驱动增强功能和新的有线/无线硬件支持，还有一些核心的网络改进，如IPv4的BIGTCP。">
+        <title>Linux 6.3引入IPv4 "BIG TCP "以提高高速网络性能</title>
+        <style>img {max-width: 90%;} body {text-align: center;}</style>
+        </head>
+        <body><h1>Linux 6.3引入IPv4 "BIG TCP "以提高高速网络性能</h1><p>内核团队今天提交了Linux 6.3内核的网络子系统功能更新，不仅有一些突出的网络驱动增强功能和新的有线/无线硬件支持，还有一些核心的网络改进，如IPv4的BIG TCP。</p><hr><div class="article-content" id="artibody">
+<p>自去年以来，Linux内核已经为IPv6流量提供BIG TCP支持，以允许更大的TSO/GRO数据包大小。这为IPv6的性能带来了显著的提升，尤其是在25~100+Gbit的网络空间，同时也带来了更低的延迟。随着Linux 6.3的推出，类似的优势也在IPv4领域得到体现。</p><p style="text-align: center;"><img alt="image.webp" src="https://x.liuping.win/img/2b90dfff8af7f7741295ffa7b6341347.webp" title=""/></p><p style="text-align: center;">在IPv4 BIG TCP补丁系列中显示的基准测试表明，启用BIG TCP后有一些非常好的改进</p><p>在 Linux 6.3 中，IPv3 BIG TCP 支持现在可以实现更好的网络吞吐性能和更低的延迟，特别是在拥有高速网络适配器的数据中心。当涉及到IPv6 BIG TCP时，Linux 6.3内核还扩展了英特尔ICE驱动以支持该功能。关于BIG TCP的更多背景信息，感兴趣的人可以通过Netdev 0x15的演讲找到。</p><p>Linux 6.3中其他一些关键的网络变化包括支持最小的WiFi 7极高吞吐量（EHT）报告、WiFi 7 EHT通道穿刺支持、取消静态WEP支持、S390x和RISC-V 64位硬件上的BPF trampoline支持、其他各种BPF增强，以及更多。</p><p>谈到Linux 6.3中的网络驱动，包含NVIDIA BlueField 3 DPU以太网、i.MX93 SoC、高通WiFi 7设备与ath12k支持（更多细节将在不久后的文章中介绍），以及Realtek RTL8188EU WiFi适配器支持。</p><p>Linux 6.3合并窗口的全部网络变化清单可以通过这个拉动请求找到：</p><p>https://lore.kernel.org/lkml//<br/></p> </div></body>
+        </html>
