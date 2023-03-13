@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+        <html><head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <meta property="og:type" content="article">
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:description" content="在Android应用商店当中，有很多提供“一键加速”功能的App，它们通过清理Android系统中的后台应用来为手机提速。这样的操作是否有用，以及这样的App存在是否合理呢？随着Android14DP2发布，Android用户有了一个官方解释。">
+        <meta property="og:site_name" content="x.liuping.win">
+        <meta property="og:image" content="https://x.liuping.win/img/511bc174a034f1ab2ead757bcb8d5992.jpg">
+        <meta property="og:url" content="https://x.liuping.win/artical/20f1ff8eb137bf45740f703b9692c66e.htm">
+        <meta property="og:title" content="Android 14不再允许“杀后台” 一键加速App集体沉没 - x.liuping.win">
+        <meta name="keywords" content="Google Android,Android 14不再允许“杀后台” 一键加速App集体沉没,x.liuping.win">
+        <meta name="description" content="在Android应用商店当中，有很多提供“一键加速”功能的App，它们通过清理Android系统中的后台应用来为手机提速。这样的操作是否有用，以及这样的App存在是否合理呢？随着Android14DP2发布，Android用户有了一个官方解释。">
+        <title>Android 14不再允许“杀后台” 一键加速App集体沉没</title>
+        <style>img {max-width: 90%;} body {text-align: center;}</style>
+        </head>
+        <body><h1>Android 14不再允许“杀后台” 一键加速App集体沉没</h1><p>在Android应用商店当中，有很多提供“一键加速”功能的App，它们通过清理Android系统中的后台应用来为手机提速。这样的操作是否有用，以及这样的App存在是否合理呢？随着Android 14 DP2发布，Android用户有了一个官方解释。</p><hr><div class="article-content" id="artibody">
+<p>通常来说，这类“一键加速”App拥有一个特殊权限（KILL_BACKGROUND_PROCESSES），通过执行系统命令（ActivityManager.killBackgroundProcesses）来清除后台应用，简单粗暴地杀死内存中的常驻进程来回收内存。</p><p>从Android 14开始，App获得上述这个特殊权限（KILL_BACKGROUND_PROCESSES）的API将受到限制。“一键加速”App，包括所有能获得杀后台权限的App，都将只能清除自己的后台进程。</p><p>不再能够清除其它App的后台进程，<strong>这意味着，“一键加速”App将成为历史，多个App后台互相打架的情况也将不再发生。</strong></p><p><img src="https://x.liuping.win/img/511bc174a034f1ab2ead757bcb8d5992.jpg"/></p><p>Android方面给出了这样做的解释，根据Android 14DP2的描述文档，<strong>Android方面认为，应用程序“不应该使用killBackgroundProcesses()API或者其它方法，试图影响其它应用程序的进程。</strong></p><p>Android旨在将缓存的应用程序保留在后台，并在系统需要内存时自动终止它们。<strong>“一键加速”App不必要地清除其它App进程，可能会降低系统性能并增加电池消耗量。</strong></p><p>因为稍后系统需要完全重新启动这些应用程序，这比恢复现有缓存的应用程序需要更多资源。从Android 14开始，拥有新的权限KILL_ALL_BACKGROUND_PROCESSES的系统应用才能杀死其它应用的后台进程。</p><p>另外，一个有趣的细节是，描述文档还提到：“第三方应用无法改善Android设备内存、电源或热行为。”</p><p><img src="https://x.liuping.win/img/277523dae29b86a418cefdda1d22a1b7.jpg"/></p> </div></body>
+        </html>
