@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+        <html><head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <meta property="og:type" content="article">
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:description" content="算上显存的话，DDRDRAM至今已经发展到了第六代，也就是说DDR5内存正在逐步成为市场主流，但是它的“老祖宗”--即初代的DDR内存的普及却是险中求胜，只因为当时它有个蹩脚的对手——RambusDRAM。">
+        <meta property="og:site_name" content="x.liuping.win">
+        <meta property="og:image" content="https://x.liuping.win/img/049a2e8999c700bc9f2e7dbef402f9be.jpg">
+        <meta property="og:url" content="https://x.liuping.win/artical/a91aa248d14934711dc4bf98b5a48a24.htm">
+        <meta property="og:title" content="你们用的内存，可能差点就不是DDR了 - x.liuping.win">
+        <meta name="keywords" content="硬件,你们用的内存，可能差点就不是DDR了,x.liuping.win">
+        <meta name="description" content="算上显存的话，DDRDRAM至今已经发展到了第六代，也就是说DDR5内存正在逐步成为市场主流，但是它的“老祖宗”--即初代的DDR内存的普及却是险中求胜，只因为当时它有个蹩脚的对手——RambusDRAM。">
+        <title>你们用的内存，可能差点就不是DDR了</title>
+        <style>img {max-width: 90%;} body {text-align: center;}</style>
+        </head>
+        <body><h1>你们用的内存，可能差点就不是DDR了</h1><p>算上显存的话，DDR DRAM至今已经发展到了第六代，也就是说DDR5内存正在逐步成为市场主流，但是它的“老祖宗”--即初代的DDR内存的普及却是险中求胜，只因为当时它有个蹩脚的对手——Rambus DRAM。</p><hr><div class="article-content" id="artibody">
+<p><img id="0" src="https://x.liuping.win/img/049a2e8999c700bc9f2e7dbef402f9be.jpg"/><br/></p><p>从奔腾二到奔腾四初期，电脑用的内存为SDRAM，常见有PC100、PC133等频率，内存带宽达到1064MB/s，但已经无法满足奔腾四4这个CPU的“胃口”，新一代内存呼之欲出。为了提升内存的带宽，以及达到独占市场的目的，Intel与一家叫做Rambus的公司联合推出了Rambus DRAM内存（简称为RDRAM）。</p><p>和SDRM相比，Rambus DRAM采用了RISC(精简指令集计算机)理论，依靠更高的时钟频率（包括300MHz、350MHz和400MHz）来简化每个时钟周期的数据量，其数据通道接口只有16bit（由两条8bit的数据通道组成），远低于SDRAM的64bit。</p><p>由于Rambus DRAM采用双速率传输结构，同时利用时钟脉冲的上升与下降沿进行数据传输，因此在300MHz下的数据传输量可以达到300MHz×16bit×2/8=1.2GB/s，400MHz时可达到1.6GB/s，双通道PC800MHz RDRAM的数据传输量更是达到了3.2GB/s，因此一度被认为是奔腾四的绝配。</p><p>同时，不要以为内存带散热马甲是近几年的事，因为Rambus DRAM一出生就是自带散热马甲的，如下图，而且仔细观察散热马甲还是用铆钉永久固定在PCB上的，同时内存上还贴有发热的标识。</p><p><img id="1" src="https://x.liuping.win/img/7662d37fdc45e9cb6079296478c7f8fe.jpg"/><br/></p><p>更有意思的是，这款内存的DRAM颗粒既不是早期的TSOP封装，也不是现在常见的BGA封装，而且是采用一种系统封装模式，从下面这张满是水印的拆截图可以看到，每颗DRAM的颗粒就像CPU的内核一样是裸露的晶片，因此才使用这种永久性的散热马甲封装，其发热量可见一般。</p><p><img id="2" src="https://x.liuping.win/img/15cfaeddb7a3efd4234564c7bc609fcd.jpg"/><br/></p><p>更有意思的是，Rambus DRAM采用了类似串行的数据传输方式，从下面的原理来看，数据依次通过RIMM1到RIMM2，因此Rambus DRAM内存必须要成对使用，可以说是“返古”了。</p><p><img id="3" src="https://x.liuping.win/img/edca1ad5771464ba00790f5e83bc06a0.png"/><br/></p><p>不要以为这就完了，因为Rambus DRAM内存系统在主板上还不能留有空槽，不然依然无法实现数据传输，需要有RSL信号终结器。当然这东西并不是什么高科技电子元器件，实际上它只是一根金手指数量与RamBus内存相同的PCB！</p><p><img id="4" src="https://x.liuping.win/img/637288f33691a8e1f1b0dd67a4361cd5.jpg"/><br/></p><p>因此，这种结构的主板，不仅单根内存出现问题会导致系统无法通过自检，如果内存在插槽上的安装的位置不对同样会无法通过自检。而且各家主板的定义不同，例如有的主板是1、2槽插内存，3、4槽插RSL信号终结器，而有的主板则是交叉安装。</p><p><img id="5" src="https://x.liuping.win/img/3a172c8470706a8946c1ddece2b6b623.jpg"/><br/></p><p>得到了Intel的“宠爱”，Rambus DRAM不禁飘飘然，售价比SDRAM高了一倍左右，但成本仅比SDRAM高了3%。除此之外，其他的内存厂商想要生产Rambus DRAM内存，不仅需要打造全新的生产线，还要向Rambus缴纳高昂的专利费，因此生产Rambus DRAM内存的厂商仅有三星等少数几家，不仅市面上内存难买，更出现了Intel购买奔腾4 CPU就搭售Rambus DRAM内存的窘境。</p><p style="text-align: center;"><img id="6" src="https://x.liuping.win/img/685146ba627a8d95c248e6bd5a236a93.jpg"/><br/></p><p style="text-align: center;">（支持Rambus DRAM内存的主板，注意最上面两个插槽安装终结器）</p><p>正所谓“天欲让其亡，必让其先狂”，受制于高昂的价格，以及成对使用+终结器的奇葩工作原理导致的高使用成本，Rambus DRAM终究没有实现普及，而售价更低的DDR DRAM内存受到市场的欢迎，而Intel后来也开始默认使用DDR内存，Rambus DRAM在市场掀起短暂的浪花之后终于消失于历史的长河之中。</p> </div></body>
+        </html>
