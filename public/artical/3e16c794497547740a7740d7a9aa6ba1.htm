@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+        <html><head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <meta property="og:type" content="article">
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:description" content="Windows11发布的时候，微软默认开启了基于虚拟化的安全性(VBS)、Hypervisor强制代码一致性检查(HVCI)两项功能，引发了不小的争议，很多人担心它们是否会影响性能。最近，Windows10似乎也开始默认打开了VBS。">
+        <meta property="og:site_name" content="x.liuping.win">
+        <meta property="og:image" content="https://x.liuping.win/img/63e95d739c6fe7bb35db23778ab7fd49.jpg">
+        <meta property="og:url" content="https://x.liuping.win/artical/3e16c794497547740a7740d7a9aa6ba1.htm">
+        <meta property="og:title" content="关闭Windows 10/11虚拟化安全功能 游戏性能飙升最多37.7％ - x.liuping.win">
+        <meta name="keywords" content="Windows,关闭Windows 10/11虚拟化安全功能 游戏性能飙升最多37.7％,x.liuping.win">
+        <meta name="description" content="Windows11发布的时候，微软默认开启了基于虚拟化的安全性(VBS)、Hypervisor强制代码一致性检查(HVCI)两项功能，引发了不小的争议，很多人担心它们是否会影响性能。最近，Windows10似乎也开始默认打开了VBS。">
+        <title>关闭Windows 10/11虚拟化安全功能 游戏性能飙升最多37.7％</title>
+        <style>img {max-width: 90%;} body {text-align: center;}</style>
+        </head>
+        <body><h1>关闭Windows 10/11虚拟化安全功能 游戏性能飙升最多37.7％</h1><p>Windows 11发布的时候，微软默认开启了<strong>基于虚拟化的安全性(VBS)、Hypervisor强制代码一致性检查(HVCI)</strong>两项功能，引发了不小的争议，很多人担心它们是否会影响性能。最近，Windows 10似乎也开始默认打开了VBS。</p><hr><div class="article-content" id="artibody">
+<p>为此，Tom's Haredware特意做了一次对比测试，看看VBS是否真的会对游戏性能产生影响。</p><p><img src="https://x.liuping.win/img/63e95d739c6fe7bb35db23778ab7fd49.jpg"/></p><p>测试系统是最新版的Windows 11 64位专业版，硬件配置有：i9-13900K、RTX 4090(528.49版驱动)、微星MEG Z790ACE、芝奇Trident Z5 DDR5-6600 16GB x 2、Sabrent Rocket 4 Plus-G 4TB。</p><p>测试游戏一共15款，包括6款光追、6款DX12、2款DX11、1款Vulkan，每个游戏都测试1080p中画质、1080高画质、2K高画质、4K高画质四个档次，考察平均帧率、1％最低帧两个指标。</p><p><img src="https://x.liuping.win/img/90ea95d818451e26c676b3d5dc224e2b.png"/></p><p>结果相当惊人，<strong>总共120组对比数据，关闭VBS之后有多达118组的数据提升了</strong>，唯二下降的幅度也只有0.1％、0.2％<strong>，完全属于误差。</strong></p><p><strong>15款游戏平均下来，VBS关闭之后平均帧率在4K下提升了2.1％，1080p中画质下提升了5.3％，也就是分辨率越低、画质越低，差异越大，变化超过5％的就有26组之多。</strong></p><p>其中，<strong>《微软飞行模拟》在1080p低画质下提升了11.2％，是影响最大的</strong>，其他三组设定也提升了9％左右。</p><p><strong>1％最低帧的变化就更大了，不同分辨率画质下提升了4.9％至8.7％不等，但和分辨率、画质并没有线性关系，2K高画质下是最突出的。</strong></p><p>变化幅度超过5％的有多达33组，其中13组更是超过了10％，像是《微软飞行模拟》四种情况下提升最也有12.4％，最多达15.5％。</p><p><strong>最夸张的是《全面战争：战锤3》，1080p高画质下的提升幅度竟然达到了夸张的37.7％，2K高画质下也有28.6％！</strong></p><p>所以，如果你是个游戏玩家，最好手动关闭VBS，方法也很简单。</p><p>只需在开始菜单中找到并打开Windows终端(管理员)，输入以下命令回车，然后重启电脑即可：</p><p><strong><em>bcdedit /set hypervisorlaunchtype off</em></strong></p><p><img src="https://x.liuping.win/img/ea4e6c827058e2863a9eb3687473a3db.png"/></p><p>如何检查基于虚拟化的安全性是否打开？同样简单，Win+R快捷键打开“运行”窗口，输入“<strong><em>msinfo32</em></strong>”，即可找到它。</p><p><img src="https://x.liuping.win/img/01a9c44fac30e5b0766b0751fb1435cd.png"/></p> </div></body>
+        </html>
