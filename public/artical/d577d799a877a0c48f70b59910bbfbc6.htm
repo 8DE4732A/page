@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+        <html><head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <meta property="og:type" content="article">
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:description" content="近日，NVIDIA悄然揭开了大量GeForce系列游戏显卡上的视频编码限制，而且9年前Maxwell架构以来的显卡几乎都有惠及，十分惊喜。在以往，NVIDIAGeForce显卡最多仅支持通过NVENC编码器对3条视频流同时进行编码，远不及数据中心、工作站产品的11-17条并发，虽然也有破解但比较麻烦。">
+        <meta property="og:site_name" content="x.liuping.win">
+        <meta property="og:image" content="https://x.liuping.win/img/7d7141e66823fe9ca0b99c2444395c88.png">
+        <meta property="og:url" content="https://x.liuping.win/artical/d577d799a877a0c48f70b59910bbfbc6.htm">
+        <meta property="og:title" content="NVIDIA宣布将解锁消费级显卡的视频编码能力限制 - x.liuping.win">
+        <meta name="keywords" content="nVIDIA,NVIDIA宣布将解锁消费级显卡的视频编码能力限制,x.liuping.win">
+        <meta name="description" content="近日，NVIDIA悄然揭开了大量GeForce系列游戏显卡上的视频编码限制，而且9年前Maxwell架构以来的显卡几乎都有惠及，十分惊喜。在以往，NVIDIAGeForce显卡最多仅支持通过NVENC编码器对3条视频流同时进行编码，远不及数据中心、工作站产品的11-17条并发，虽然也有破解但比较麻烦。">
+        <title>NVIDIA宣布将解锁消费级显卡的视频编码能力限制</title>
+        <style>img {max-width: 90%;} body {text-align: center;}</style>
+        </head>
+        <body><h1>NVIDIA宣布将解锁消费级显卡的视频编码能力限制</h1><p>近日，NVIDIA悄然揭开了大量GeForce系列游戏显卡上的视频编码限制，而且9年前Maxwell架构以来的显卡几乎都有惠及，十分惊喜。在以往，NVIDIA
+ 
+GeForce显卡最多仅支持通过NVENC编码器对3条视频流同时进行编码，远不及数据中心、工作站产品的11-17条并发，虽然也有破解但比较麻烦。</p><hr><div class="article-content" id="artibody">
+<p>意外的是，NVIDIA已经放宽了上述限制，<strong>从第一代Maxwell架构的GTX 745/750/750 Ti显卡开始，后续所有的消费级产品(MX系列和GT 1030这样的除外)，包括桌面、笔记本，一律开放支持5条视频流编码并发。</strong></p><p>与此同时，<strong>数据中心和工作站产品，也就是Quadro、Tesla系列，对编码视频流的并发数量不做任何限制</strong>，除了一些低端产品仅支持3条。</p><p><img src="https://x.liuping.win/img/7d7141e66823fe9ca0b99c2444395c88.png"/></p><p><img src="https://x.liuping.win/img/d424f875f5ce4d3c19a7c1eb5a85a678.png"/></p><p>NVDEC视频解码则没有变化，理论上不限制视频流并发数，但一来我们不会同时观看太多视频，二来具体数量也取决于GPU算力、编码格式、视频质量等。</p><p><img src="https://x.liuping.win/img/46a9721d81f390ae3a51dfd6577b9e6e.png"/></p><p>值得一提的是，NVIDIA此次解锁只是在软件层面上进行的，<strong>硬件层面的NVENC编码单元、NVDEC解码单元依然不变。</strong></p><p>比如最新的Ada Lovelace架构的AD102核心，集成了三个NVENC、三个NVDEC，RTX 6000 Ada等工作站产品、L40等数据中心产品都开放了全部，RTX 4090则屏蔽掉了一个NVENC。</p><p>AD103、AD104核心都是两个NVENC、四个NVDEC，但是游戏卡屏蔽了三个NVDEC。</p><p><img src="https://x.liuping.win/img/c18cbe0c803b2b2653c0c97d2df1b272.png"/></p><p>AD104核心示意图</p><p><img src="https://x.liuping.win/img/07f9cc56258ae7cf302b7eee228c1d95.png"/></p><p>RTX 4070 Ti核心示意图：除了屏蔽SM单元，还屏蔽了NVDEC</p> </div></body>
+        </html>
