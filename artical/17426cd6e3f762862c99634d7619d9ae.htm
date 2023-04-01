@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+        <html><head>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <meta property="og:type" content="article">
+        <meta property="og:locale" content="zh_CN">
+        <meta property="og:description" content="正如首席执行官埃隆-马斯克多次承诺的那样，Twitter已经向公众开放了部分源代码，包括它用来在用户时间线上推荐推文的算法。在GitHub上，Twitter发布了两个代码库，其中包含使社交网络运转的许多部分的代码，包括Twitter用来控制用户在&quot;给你的时间线&quot;上看到的推文的机制。">
+        <meta property="og:site_name" content="x.liuping.win">
+        <meta property="og:image" content="https://x.liuping.win/img/613faae99d7afc8a7a88c68bafff9997.jpg">
+        <meta property="og:url" content="https://x.liuping.win/artical/17426cd6e3f762862c99634d7619d9ae.htm">
+        <meta property="og:title" content="Twitter对外披露部分源代码 包括其推荐算法 - x.liuping.win">
+        <meta name="keywords" content="社交 - Microblog 微博客,Twitter对外披露部分源代码 包括其推荐算法,x.liuping.win">
+        <meta name="description" content="正如首席执行官埃隆-马斯克多次承诺的那样，Twitter已经向公众开放了部分源代码，包括它用来在用户时间线上推荐推文的算法。在GitHub上，Twitter发布了两个代码库，其中包含使社交网络运转的许多部分的代码，包括Twitter用来控制用户在&amp;quot;给你的时间线&amp;quot;上看到的推文的机制。">
+        <title>Twitter对外披露部分源代码 包括其推荐算法</title>
+        <style>img {max-width: 90%;} body {text-align: center;}</style>
+        </head>
+        <body><h1>Twitter对外披露部分源代码 包括其推荐算法</h1><p>正如首席执行官埃隆-马斯克多次承诺的那样，Twitter已经向公众开放了部分源代码，包括它用来在用户时间线上推荐推文的算法。在GitHub上，Twitter发布了两个代码库，其中包含使社交网络运转的许多部分的代码，包括Twitter用来控制用户在"给你的时间线"上看到的推文的机制。</p><hr><div class="article-content" id="artibody">
+<p><img src="https://x.liuping.win/img/613faae99d7afc8a7a88c68bafff9997.jpg"/></p><p>在一篇博文中，Twitter将此举描述为"提高透明度的第一步"，同时"防止"对Twitter本身和该平台上的人造成风险。</p><p>在今天的Twitter Spaces会议上，马斯克澄清说：</p><blockquote><p>"我们最初发布的所谓算法会相当尴尬，人们会发现很多错误，但我们会很快修复它们。即使你不同意某些东西，至少你会知道它为什么在那里，而且你没有被秘密操纵......在这里，我们渴望的类比是Linux作为一个开源操作系统的伟大例子......理论上，人们可以为Linux发现许多漏洞。在现实中，所发生的是社区识别和修复这些漏洞。"</p></blockquote><p>关于博文中关于预防风险的第二点，开源版本不包括为Twitter的广告推荐业务提供支撑的代码或用于训练Twitter推荐算法的数据。此外，它们几乎不包括关于如何检查或实际使用这些代码的说明--这加强了这些版本严格以开发者为中心的想法。</p><p>Twitter写道："[我们排除了]任何会损害用户安全和隐私或保护我们的平台不受不良行为影响的代码，包括破坏我们打击儿童性剥削和操纵的努力。我们[还]采取了措施，以确保用户安全和隐私将得到保护。"</p><p>Twitter正在开发工具以管理来自社区的代码建议，并将变化同步到其内部存储库。据推测，这些工具将在未来的某一天提供--目前还没有迹象表明它们的存在。</p><p>马斯克在Spaces会议上说："我们将寻求建议，不仅仅是关于错误的建议，还有关于算法应该如何工作的建议。这将是一个不断发展的过程。我不会期望它是一个不间断的上升运动......但我们对能够改善用户体验的东西非常开放。"</p><p>乍一看，社交网络的算法是相当复杂的--但从技术角度看，不一定令人惊讶。它由多个模型组成，包括检测"对工作不安全"或辱骂性内容的模型，一个Twitter用户与另一个用户互动的可能性，以及计算一个Twitter用户的"声誉"。(目前还不清楚"声誉"具体指的是什么；高层文件并不清楚）。几个神经网络负责对推文进行排名，并推荐要关注的账户，而过滤组件则隐藏推文 - "支持法律合规，提高产品质量，增加用户信任，通过使用硬过滤、可见产品处理和粗粒度降级来保护收入"。</p><p>在一篇工程博文中，Twitter透露了更多关于推荐管道的信息，它声称该管道每天大约运行50亿次：</p><p>Twitter写道："我们试图从数以亿计的信息库中提取最好的1500条推文......今天，为你服务的时间线平均由50%[你不关注的人的推文]和50%[你关注的人的推文]组成，尽管这可能因用户而异。"[推文]的排名是通过一个约4800万个参数的神经网络实现的，该网络在推文互动方面不断训练，以优化积极的参与（例如喜欢、转发和回复）。"</p><p>源代码的公布是在最近几个月涉及Twitter推荐算法调整的几场争议之后发生的。据Platformer报道，今年2月，马斯克呼吁Twitter的工程师重新配置算法，以便他的推文能被更多人看到。(Twitter后来收回了这一改变--至少在某种程度上。)</p><p><strong>了解更多：</strong></p><p>https://github.com/twitter/the-algorithm/<br/></p> </div></body>
+        </html>
