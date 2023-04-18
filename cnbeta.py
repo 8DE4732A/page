@@ -1,4 +1,3 @@
-import requests
 import sys
 import os
 import hashlib
@@ -6,15 +5,11 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from bs4 import BeautifulSoup
 import shutil
+import httpx
 
 
 SERVER_NAME = 'https://x.liuping.win'
 
-proxies =  {
-   'http': 'http://172.20.16.1:10809',
-   'https': 'http://172.20.16.1:10809',
-}
-proxies = None
 
 hot_headers = {
     'authority': 'hot.cnbeta.com.tw',
@@ -45,6 +40,9 @@ headers = {
     'upgrade-insecure-requests': '1',
     'user-agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
 }
+proxies = 'http://localhost:10809'
+proxies = None
+client = httpx.Client(http2=True, proxies=proxies)
 
 def parse_img(url):
     print('-----img:', url)
@@ -52,7 +50,7 @@ def parse_img(url):
         url = "https:" + url
     p = hashlib.md5(url.encode(encoding='UTF-8')).hexdigest() + url[url.rindex('.'):]
     try:
-        r = requests.get(url)
+        r = client.get(url)
         if not Path(sys.path[0] + '/img/' + p).exists():
             with open(sys.path[0] + '/img/' + p, 'wb') as f:
                 f.write(r.content)
@@ -72,9 +70,9 @@ def parse_artical(url, ):
     r = None
     if url.startswith('//hot.cnbeta.com.tw'):
         url = 'https:' + url
-        r = requests.get(url, headers=hot_headers, proxies=proxies)
+        r = client.get(url, headers=hot_headers)
     else:
-        r = requests.get(url, headers=headers, proxies=proxies)
+        r = client.get(url, headers=headers)
     r.encoding = 'utf-8'
     soup = BeautifulSoup(r.text, 'html.parser')
     title = soup.select_one('.cnbeta-article > header > h1').string
@@ -123,9 +121,9 @@ def parse_artical(url, ):
 
 
 def parse_index():
-    r = requests.get('https://www.cnbeta.com.tw/', headers=headers, proxies=proxies)
-    print(r.status_code)
+    r = client.get('https://www.cnbeta.com.tw/', headers=headers)
     r.encoding = 'utf-8'
+    r.status_code
     soup = BeautifulSoup(r.text, 'html.parser')
     items = []
     for item in soup.select('.item'):
