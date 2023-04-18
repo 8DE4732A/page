@@ -124,6 +124,7 @@ def parse_artical(url, ):
 
 def parse_index():
     r = requests.get('https://www.cnbeta.com.tw/', headers=headers, proxies=proxies)
+    print(r.status_code)
     r.encoding = 'utf-8'
     soup = BeautifulSoup(r.text, 'html.parser')
     items = []
